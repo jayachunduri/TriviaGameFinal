@@ -9,6 +9,9 @@ namespace TriviaGame
 {
     class Program
     {
+        public static string name;
+        public static int score = 0;
+
         static void Main(string[] args)
         {
             //The logic for your trivia game happens here
@@ -21,6 +24,8 @@ namespace TriviaGame
             //random number generator to pick a random question
             Random rng = new Random();
 
+            Console.WriteLine("Enter your name");
+            name = Console.ReadLine();
             //loop for the game
             while (playing)
             {
@@ -36,12 +41,14 @@ namespace TriviaGame
                 {
                     Console.WriteLine("Congratulations! You got it");
                     correct++;
+                    score += 100;
                 }
                 else //means wrong answer
                 {
                     Console.WriteLine("Sorry you got it wrong");
                     Console.WriteLine("The correct answer is: " + AllQuestions[question].Answer);
                     wrong++;
+                    score -= 10;
                 }
 
                 //checking if the user wants to play more
@@ -57,6 +64,9 @@ namespace TriviaGame
             //comes out of while loop after the game is over
             Console.WriteLine("Out of " + total + " questions, you got " + correct + " questions correct and " + wrong + " questions wrong");
             Console.WriteLine("Thanks for playing");
+
+            AddToDB();
+            InfoFromDB();
         }
 
 
@@ -97,6 +107,41 @@ namespace TriviaGame
 
             //Return the full list of trivia questions
             return returnList;
+        }
+
+        //add to db
+        static void AddToDB()
+        {
+            //connection to db
+            JayaEntities db = new JayaEntities();
+            HighScore currentScore = new HighScore();
+
+            //add all info to current score
+            currentScore.DateCreated = DateTime.Now;
+            currentScore.Game = "Trivia";
+            currentScore.Name = name;
+            currentScore.Score = score;
+
+            db.HighScores.Add(currentScore);
+
+            db.SaveChanges();
+        }
+
+        //display info from high score
+        static void InfoFromDB()
+        {
+            Console.WriteLine("Press Enter to see high scores");
+            Console.ReadKey();
+            Console.Clear();
+
+            JayaEntities db = new JayaEntities();
+
+            List<HighScore> highScoreList = db.HighScores.Where(x => x.Game == "Trivia").OrderByDescending(x => x.Score).Take(10).ToList();
+
+            foreach (var item in highScoreList)
+            {
+                Console.WriteLine("{0}, {1}{2}", highScoreList.IndexOf(item) + 1, item.Name, item.Score);
+            }
         }
     }
 }

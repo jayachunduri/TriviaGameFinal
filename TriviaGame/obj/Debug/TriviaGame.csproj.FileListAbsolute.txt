@@ -12,3 +12,12 @@ C:\Users\Technologist\Documents\GitHub\Trivia-Game\TriviaGame\TriviaGame\bin\Deb
 C:\Users\Technologist\Documents\GitHub\Trivia-Game\TriviaGame\TriviaGame\bin\Debug\TriviaGame.exe
 C:\Users\Technologist\Documents\GitHub\Trivia-Game\TriviaGame\TriviaGame\bin\Debug\TriviaGame.pdb
 C:\Users\Technologist\Documents\GitHub\Trivia-Game\TriviaGame\TriviaGame\obj\Debug\TriviaGame.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\bin\Debug\TriviaGame.exe.config
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\obj\Debug\TriviaGame.exe
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\obj\Debug\TriviaGame.pdb
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\bin\Debug\trivia.txt
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\bin\Debug\TriviaGame.exe
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\bin\Debug\TriviaGame.pdb
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\bin\Debug\EntityFramework.dll
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\bin\Debug\EntityFramework.xml
+C:\Users\Technologist\Documents\GitHub\TriviaGameFinal\TriviaGame\obj\Debug\TriviaGame.csprojResolveAssemblyReference.cache
